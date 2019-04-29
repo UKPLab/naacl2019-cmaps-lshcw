@@ -25,9 +25,27 @@ Don't hesitate to send us an e-mail or report an issue if something is broken (a
 
 ## Requirements
 
-The code is based on the implementation available here: https://github.com/UKPLab/ijcnlp2017-cmaps
+The code provided here is based on this implementation: https://github.com/UKPLab/ijcnlp2017-cmaps
 
+Make sure you have that codebase available, all dependencies documented there installed and you can completely run that pipeline.
 
 ## Usage
 
-Will be added soon.
+To reproduce the experiments reported in this paper, follow the instructions A step 1-4 of the baseline pipeline linked above. Running that pipeline as provided yields the results referred to as *Reference* in the paper. Results for *lemma-only* can also be obtained using the pure baseline implementation.
+
+To reproduce the results of *w2v-only*, *LSH-only* and *LSH-CW*, add the models and java files provided in this repository to the baseline.
+
+Before running step 3, change the grouping strategy by replacing `ConceptGrouperSimLog` in `PipelineGraph.java`
+
+```
+String[] pipeline = { "extraction.PropositionExtractor",
+                      "grouping.ConceptGrouperSimLog",
+                      "grouping.ExtractionResultsSerializer" };
+```
+
+with the corresponding class provided in this repository (`ConceptGrouperSimLogW2V`, `ConceptGrouperLSH` or `ConceptGrouperSimLogW2V`).
+
+Before running steps 4.3 and 4.4, change the paths (see instructions of the baseline) to the corresponding model provided in this repository.
+
+All other steps can be run without changes.
+
