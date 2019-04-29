@@ -43,9 +43,9 @@ String[] pipeline = { "extraction.PropositionExtractor",
                       "grouping.ExtractionResultsSerializer" };
 ```
 
-with the corresponding class provided in this repository (`ConceptGrouperSimLogW2V`, `ConceptGrouperLSH` or `ConceptGrouperSimLogW2V`).
+with the corresponding class provided in this repository (`ConceptGrouperSimLogW2V`, `ConceptGrouperLSH` or `ConceptGrouperLSHCW`).
 
-Before running steps 4.3 and 4.4, change the paths (see instructions of the baseline) to the corresponding model provided in this repository.
+Before running steps 4.3 and 4.4, change the paths (see instructions of the baseline) to the corresponding model files provided in this repository.
 
 All other steps can be run without changes.
 
